@@ -60,14 +60,11 @@ class App extends Component {
   }
 
   handleClickCard = (thisNote, e) => {
-    console.log(thisNote);
     if (e.target.className.includes("glyph")) {
-      console.log('delete');
       fetch(`http://localhost:3000/api/v1/notes/${thisNote.id}`, {
         method: 'DELETE'
       }).then(() => this.getNotes())
     } else {
-      console.log('select');
       this.setState({
         currentNote: thisNote
       })
@@ -97,8 +94,6 @@ class App extends Component {
   handleSubmit = e => {
     e.preventDefault()
     let data = this.state.currentNote
-
-    console.log('currentNote', this.state.currentNote);
     fetch(`http://localhost:3000/api/v1/notes/${this.state.currentNote.id}`, {
       method: 'PATCH',
       body: JSON.stringify(data),
@@ -114,7 +109,6 @@ class App extends Component {
 
 
   render() {
-    console.log("App State", this.state);
     return (
       <div className="App">
         <div className="nav navbar-default">
@@ -122,7 +116,7 @@ class App extends Component {
             <h1>ForeverNote</h1>
           </div>
         </div>
-        <div className="container">
+        <div className="container" id="main">
           <div className="row">
             <ListContainer
               notes={this.state.notes} clickCard={this.handleClickCard}

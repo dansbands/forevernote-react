@@ -1,5 +1,6 @@
 h1 {
-  color: green;
+  color: rgb(34,186,70);
+
 }
 
 .list-cards {
@@ -9,5 +10,18 @@ h1 {
 }
 
 .current-note {
-  border: 3px solid green;
+  border: 3px solid rgb(34,186,70);
+}
+
+.glyphicon-plus-sign {
+  color: rgb(34,186,70);
+}
+
+.nav {
+  border-bottom: 1px solid rgb(34,186,70);
+
+}
+
+.form-group {
+  margin-top: 20px;
 }
